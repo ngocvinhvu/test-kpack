@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-test
+  labels:
+    app: python-test
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: python-test
+  template:
+    metadata:
+      labels:
+        app: python-test
+    spec:
+      containers:
+      - name: python-test
+        image: rose13/python-test:v1
+        ports:
+        - containerPort: 5000
