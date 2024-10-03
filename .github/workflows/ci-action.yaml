@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./
-          tags: /
+          tags: |
             rose13/python-test:${{ github.sha }}
             ghcr.io/ngocvinhvu/python-test:${{ github.sha }}
           push: ${{ github.ref == 'refs/heads/master' }}
@@ -48,7 +48,7 @@ jobs:
           ref: 'master'
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
-        run: /
+        run: |
           git config --global user.email "vungocvinh95@gmail.com"
           git config --global user.name "ngocvinhvu"
           echo ${{ github.sha }}
