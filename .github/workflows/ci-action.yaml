@@ -52,7 +52,7 @@ jobs:
           git config --global user.email "vungocvinh95@gmail.com"
           git config --global user.name "ngocvinhvu"
           echo ${{ github.sha }}
-          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/argocd-test:${{ github.sha }}#g" deployment.yaml
+          sed -i "s#${{ github.actor }}.*#${{ github.actor }}/python-test:${{ github.sha }}#g" deployment.yaml
           git add -A
           git commit -am "Update image for - ${{ github.sha }}"
       - run: echo ${{ github }}
