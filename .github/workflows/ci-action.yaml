@@ -44,7 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: ngocvinhvu/test-kpack
+          repository: ngocvinhvu/argocd-test
           ref: 'master'
           token: ${{ secrets.G_TOKEN }}
       - name: setup git config
